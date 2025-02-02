@@ -1,0 +1,14 @@
+{
+  "name": "heart",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  },
+  "dependencies": {
+    "three": "^0.173.0"
+  }
+}

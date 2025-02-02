@@ -1,0 +1,31 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 80vh; /* Ajuste la hauteur selon tes besoins */
+    position: relative;
+}
+
+#threejs-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
