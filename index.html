@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Pour doudou</title>
-    <style>
-        * { margin: 0; padding: 0; overflow: hidden; }
-        canvas { display: block; }
-    </style>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <canvas id="threejs-canvas"></canvas>
+    <div id="canvas-container">
+        <canvas id="threejs-canvas"></canvas>
+        <div id="text-container">
+            <h1>Pour Alice,</h1>
+            <p>Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage</p>
+            <p>Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage</p>
+            <p>Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage Test de formatage</p>
+            <div id="button-container">
+                <button id="next-button">Suivant</button>
+            </div>
+        </div>
+        
+    </div>
     <script type="module" src="scripts/script.js"></script>
 </body>
 </html>

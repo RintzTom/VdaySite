@@ -1,5 +1,6 @@
 import { scene, camera, renderer, GLTFLoader } from './scene.js';
 import * as THREE from 'three';
+import { toggleText } from './text.js';
 
 let heartModel;
 const loader = new GLTFLoader();
@@ -52,15 +53,28 @@ loader.load('assets/models/heart.glb', (gltf) => {
         const intersects = raycaster.intersectObject(heartModel, true);
 
         if (intersects.length > 0) {
+            // Calculer la largeur visible de la scène
+            const aspectRatio = window.innerWidth / window.innerHeight;
+            const fovRadians = THREE.MathUtils.degToRad(camera.fov / 2);
+            const visibleWidthAtDepth = 2 * Math.tan(fovRadians) * Math.abs(camera.position.z) * aspectRatio;
+        
+            // Convertir la position en pixels en coordonnées 3D
+            const pixelPositionX = window.innerWidth / 4; // Exemple : 1920 / 4 = 480
+            const normalizedX = (pixelPositionX / window.innerWidth) * visibleWidthAtDepth;
+        
+            // Appliquer la position
             if (heartModel.position.x < -1) {
-                targetPosition.set(0, 0, 0);
+                targetPosition.set(0, 0, 0); // Réinitialiser la position
+                toggleText(false);
             } else {
-                targetPosition.set(-40, 0, 0);
+                targetPosition.set(-normalizedX, 0, 0); // Déplacer vers la gauche
+                toggleText(true);
             }
         }
     });
 
     function animate() {
+        console.log(`Window width: ${window.innerWidth}`);
         requestAnimationFrame(animate);
 
         // Smoothly interpolate the scale

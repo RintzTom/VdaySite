@@ -29,3 +29,88 @@ header, footer {
     height: 100%;
     display: block;
 }
+
+@font-face {
+    font-family: 'PinyonScript';
+    src: url('../assets/fonts/PinyonScript-Regular.ttf') format('truetype');
+}
+
+#text-container {
+    position: absolute;
+    top: 50%; /* Centrer verticalement */
+    left: 75%; /* Placer au milieu de la partie droite */
+    transform: translate(-50%, -50%); /* Centrer le conteneur */
+    font-size: 4vw; /* Utilisation d'unités relatives pour la taille de la police */
+    color: white;
+    font-family: 'PinyonScript', Arial, sans-serif; /* Utilisation de la nouvelle police */
+    z-index: 10;
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease-in-out; /* Transition en fondu */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), /* Effet de glow */
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.2),
+                 0 0 40px rgba(255, 255, 255, 0.2),
+                 0 0 50px rgba(255, 255, 255, 0.2),
+                 0 0 60px rgba(255, 255, 255, 0.2),
+                 0 0 70px rgba(255, 255, 255, 0.2);
+    text-align: center; /* Centrer le texte à l'intérieur du conteneur */
+}
+
+#text-container.show {
+    opacity: 1; /* Visible */
+}
+
+#text-container h1,
+#text-container p {
+    transition: opacity 0.3s ease-in-out; /* Transition en fondu pour les éléments */
+}
+
+#text-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5vw; /* Utilisation d'unités relatives pour la taille de la police */
+}
+
+#text-container p {
+    margin: 10px 0;
+    font-size: 1.5vw; /* Utilisation d'unités relatives pour la taille de la police */
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espace entre les boutons */
+}
+
+#next-button,
+.additional-button {
+    padding: 10px 20px;
+    font-size: 1.5vw; /* Utilisation d'unités relatives pour la taille de la police */
+    font-family: 'PinyonScript', Arial, sans-serif;
+    color: white;
+    background-color: black;
+    border: 2px solid white; /* Green */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s; /* Transition pour la couleur de fond et du texte */
+}
+
+#next-button:hover,
+.additional-button:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), /* Effet de glow */
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 0 30px rgba(255, 255, 255, 0.3),
+                0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.valentine-message {
+    font-size: 2vw !important; /* Utilisation d'unités relatives pour la taille de la police */
+    margin-top: 2dvh;
+    margin-bottom: 5dvh !important;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), /* Effet de glow */
+                 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
