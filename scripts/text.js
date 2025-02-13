@@ -1,3 +1,5 @@
+import { animateHeart } from "./heart";
+
 export function toggleText(show) {
     const textContainer = document.getElementById('text-container');
     if (show) {
@@ -48,7 +50,10 @@ function toggleButtonText() {
             message.className = 'valentine-message';
             textContainer.insertBefore(message, buttonContainer);
 
-            // Ajouter l'événement pour téléporter le bouton "Non"
+            // Evenement pour les boutons "Oui" et "Non"
+            yesButton.addEventListener('click', () => {
+                animateHeart(displayNewText);
+            });
             noButton.addEventListener('click', teleportButton);
         }, 300); // Correspond à la durée de la transition
     } else {
@@ -70,6 +75,37 @@ function toggleButtonText() {
             if (message) message.remove();
         }, 10); // Petit délai pour permettre l'application du display avant l'opacité
     }
+}
+
+function displayNewText() {
+    const textContainer = document.getElementById('text-container');
+
+    // Masquer les autres éléments de texte
+    const title = document.querySelector('#text-container h1');
+    const paragraphs = document.querySelectorAll('#text-container p');
+    title.style.display = 'none';
+    paragraphs.forEach(p => p.style.display = 'none');
+
+    // Supprimer le champ de texte avec le message
+    const message = document.getElementById('valentine-message');
+    if (message) message.remove();
+
+    // Supprimer les boutons "Oui" et "Non"
+    const yesButton = document.getElementById('yes-button');
+    const noButton = document.getElementById('no-button');
+    if (yesButton) yesButton.remove();
+    if (noButton) noButton.remove();
+
+    // Supprimer le bouton "Retour"
+    const nextButton = document.getElementById('next-button');
+    if (nextButton) nextButton.remove();
+
+    // Ajouter le nouveau texte
+    const newText = document.createElement('p');
+    newText.textContent = 'Retourne toi';
+    newText.className = 'new-text';
+    newText.style.fontSize = '1em'; // Réduire un peu la taille du texte
+    textContainer.appendChild(newText);
 }
 
 function teleportButton() {

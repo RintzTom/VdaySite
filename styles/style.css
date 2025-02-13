@@ -37,7 +37,7 @@ header, footer {
 
 #text-container {
     position: absolute;
-    top: 50%; /* Centrer verticalement */
+    top: 60%; /* Centrer verticalement */
     left: 75%; /* Placer au milieu de la partie droite */
     transform: translate(-50%, -50%); /* Centrer le conteneur */
     font-size: 4vw; /* Utilisation d'unités relatives pour la taille de la police */
@@ -73,6 +73,8 @@ header, footer {
 #text-container p {
     margin: 10px 0;
     font-size: 1.5vw; /* Utilisation d'unités relatives pour la taille de la police */
+    text-align: left; /* Aligner le texte à gauche */
+    white-space: pre-line; /* Conserver les sauts de ligne pour formater comme une poésie */
 }
 
 #button-container {
@@ -112,5 +114,5 @@ header, footer {
                  0 0 20px rgba(255, 255, 255, 0.3),
                  0 0 30px rgba(255, 255, 255, 0.3),
                  0 0 40px rgba(255, 255, 255, 0.3);
-    text-align: center;
+    text-align: center !important;
 }
