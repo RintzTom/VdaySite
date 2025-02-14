@@ -1,5 +1,5 @@
 # VdaySite
-Site web pour la St valentin de ma chérie 
+Site web en ThreeJS pour la St valentin de ma chérie 
 
 ## Installation de Node.js
 Pour installer Node.js, suivez les instructions sur le site officiel : [Node.js](https://nodejs.org/)
